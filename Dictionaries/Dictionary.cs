@@ -270,6 +270,23 @@ namespace Dictionaries
             }
         }
 
+        public void ExportWord(string key)
+        {
+            if (!words.ContainsKey(key))
+            {
+                Console.WriteLine("The word does not exist.");
+                return;
+            }
+
+            using (StreamWriter sw = new StreamWriter("Result.txt", false))
+            {
+                sw.Write(key + ": ");
+                sw.WriteLine(string.Join(", ", words[key]));
+            }
+
+            Console.WriteLine("Word exported.");
+        }
+
 
 
 

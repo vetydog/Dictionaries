@@ -81,7 +81,8 @@ namespace Dictionaries
                 Console.WriteLine("5. Change word");
                 Console.WriteLine("6. Change translation");
                 Console.WriteLine("7. Search translation");
-                Console.WriteLine("8. Back");
+                Console.WriteLine("8. Export word");
+                Console.WriteLine("9. Back");
 
                 int choice = ReadNumber();
 
@@ -182,6 +183,16 @@ namespace Dictionaries
                         }
 
                     case 8:
+                        {
+                            Console.Write("Word: ");
+                            string word = Console.ReadLine();
+
+                            dic.ExportWord(word);
+                            break;
+                        }
+                       
+
+                    case 9:
                         return;
                 }
 
