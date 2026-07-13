@@ -216,7 +216,7 @@ namespace Dictionaries
             {
                 using (StreamWriter sw = new StreamWriter(_name + ".txt", false, Encoding.UTF8))
                 {
-                    foreach (var item in words)
+                    foreach (var item in words.OrderBy(x => x.Key))
                     {
                         sw.Write(item.Key + ": ");
 
